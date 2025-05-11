@@ -1,0 +1,3 @@
+paths:
+  faiss_index: "C:/dev/AgentInfoHarvester/storage/faiss_index/news_index"
+  raw_path: "C:/dev/AgentInfoHarvester/storage/raw_data/"
