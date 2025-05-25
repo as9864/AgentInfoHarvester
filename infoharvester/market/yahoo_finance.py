@@ -13,7 +13,9 @@ def fetch_price_history(symbol: str, period: str = "30d", interval: str = "1d", 
     """
     try:
         ticker = yf.Ticker(symbol)
+        print("ticker : " , ticker)
         df = ticker.history(period=period, interval=interval)
+        print("df : ", df.columns)
         df = df.rename(columns={
             "Open": "open",
             "High": "high",
@@ -26,7 +28,7 @@ def fetch_price_history(symbol: str, period: str = "30d", interval: str = "1d", 
 
         if include_indicators:
             df = apply_indicators(df)
-
+        print("df2 : ", df)
         return df
     except Exception as e:
         print(f"❌ Failed to fetch price data for {symbol}: {e}")
